@@ -2,4 +2,6 @@ dist/
 _build/
 setup.data
 setup.log
-test.byte
+setup.exe
+*.byte
+*.opt
