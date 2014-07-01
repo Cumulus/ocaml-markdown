@@ -1,4 +1,4 @@
-OASISFormat: 0.3
+OASISFormat: 0.4
 Name:        ocaml-markdown
 Version:     0.1.2
 Synopsis:    Markdown parser and printer
@@ -11,10 +11,10 @@ Copyrights:  (C) 2009 Mauricio Fernandez,
              (C) 2010 Sylvain Le Gall
 License:     MIT
 Homepage:    http://forge.ocamlcore.org/projects/ocaml-markdown/
-Plugins:     META (0.3),
-             StdFiles (0.3),
-             DevFiles (0.3)
+Plugins:     META (0.4),
+             DevFiles (0.4)
 BuildTools:  ocamlbuild
+AlphaFeatures: compiled_setup_ml
 
 Library markdown
   Path:         src

@@ -1,0 +1,22 @@
+# OASIS_START
+# DO NOT EDIT (digest: 569d6e8b3f0de6649a4a35bb0c76509b)
+version = "0.1.2"
+description = "Markdown parser and printer"
+requires = "batteries str"
+archive(byte) = "markdown.cma"
+archive(byte, plugin) = "markdown.cma"
+archive(native) = "markdown.cmxa"
+archive(native, plugin) = "markdown.cmxs"
+exists_if = "markdown.cma"
+package "html" (
+ version = "0.1.2"
+ description = "Markdown parser and printer"
+ requires = "markdown tyxml"
+ archive(byte) = "html.cma"
+ archive(byte, plugin) = "html.cma"
+ archive(native) = "html.cmxa"
+ archive(native, plugin) = "html.cmxs"
+ exists_if = "html.cma"
+)
+# OASIS_STOP
+
