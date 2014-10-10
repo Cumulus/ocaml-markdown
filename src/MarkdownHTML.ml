@@ -1,16 +1,10 @@
 (* Copyright (C) 2009 Mauricio Fernandez <mfp@acm.org> *)
 
-module Make_wrapped_html5
-    (W : Xml_wrap.T)
-    (Html5 : Html5_sigs.T
-     with type +'a Xml.wrap = 'a W.t
-      and type +'a wrap = 'a W.t
-      and type +'a Xml.list_wrap = 'a W.tlist
-      and type +'a list_wrap = 'a W.tlist)
-= struct
+module Make_html5 (Html5 : Html5_sigs.T) = struct
 
 open Markdown
 open Html5
+module W = Xml.W
 
 let pcdata_w x = W.return @@ pcdata @@ W.return x
 let wrap_list f l =
@@ -64,11 +58,3 @@ let to_html ~render_pre ~render_link ~render_img l =
   W.map (elm_to_html ~render_pre ~render_link ~render_img) l
 
 end
-
-module Make_html5
-    (Html5 : Html5_sigs.T
-     with type +'a Xml.wrap = 'a
-      and type +'a wrap = 'a
-      and type +'a Xml.list_wrap = 'a list
-      and type +'a list_wrap = 'a list)
-  = Make_wrapped_html5 (Xml_wrap.NoWrap) (Html5)
